@@ -76,7 +76,7 @@
                 somma = 0;
                 for(int j = 0;j < m2.GetLength(0); j++)
                 {
-                    somma = somma + m2[i, j];
+                    somma = somma + m2[j, i];
                 }
                 sommaC[i] = somma;
                 Console.WriteLine("La somma della colonna " + i + " e di: " + sommaC[i]);
