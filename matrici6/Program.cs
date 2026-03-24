@@ -32,6 +32,7 @@
         }
         static int intervallo(int[,] m2, int x, int y)
         {
+            Console.WriteLine("matrice numero 2: ");
             Random r = new Random();
             int k = 0;
             for(int i = 0; i < m2.GetLength(0); i++)
@@ -40,11 +41,13 @@
                 {
                     int rand = r.Next(0, 100);
                     m2[i, j] = rand;
-                    if (m2[i, j] > x || m2[i, j] < y)
+                    if (m2[i, j] > x && m2[i, j] < y)
                     {
                         k++;
                     }
+                    Console.Write(m2[i,j] + "\t");
                 }
+                Console.WriteLine();
             }
             return k;
         }
@@ -56,8 +59,12 @@
             int x = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Dammi la fine dell'intervallo");
             int y = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
             riempimento(m);
             stampa(m);
+            Console.WriteLine();
+
             Console.WriteLine("I numeri che sono nell'intervallo dato sono: " + intervallo(m2, x, y));
             
         }
