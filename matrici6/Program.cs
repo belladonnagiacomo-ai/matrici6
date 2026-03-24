@@ -51,6 +51,38 @@
             }
             return k;
         }
+        static float[] Media(int[,] m2)
+        {
+            float[] media = new float[m2.GetLength(0)];
+            int somma = 0;
+            for(int i = 0; i < m2.GetLength(0); i++)
+            {
+                somma = 0;
+                for(int j = 0; j < m2.GetLength(1); j++)
+                {
+                    somma = somma + m2[i, j];
+                }
+                media[i] = somma/m2.GetLength(0);
+                Console.WriteLine("La media della riga " + i + " e di: " + media[i]);
+            }
+            return media;
+        }
+        static int[] SommaC(int[,] m2)
+        {
+            int[] sommaC = new int[m2.GetLength(1)];
+            int somma = 0;
+            for(int i = 0; i < m2.GetLength(1);i++)
+            {
+                somma = 0;
+                for(int j = 0;j < m2.GetLength(0); j++)
+                {
+                    somma = somma + m2[i, j];
+                }
+                sommaC[i] = somma;
+                Console.WriteLine("La somma della colonna " + i + " e di: " + sommaC[i]);
+            }
+            return sommaC;
+        }
         static void Main(string[] args)
         {
             int[,] m = new int[10, 10];
@@ -66,7 +98,12 @@
             Console.WriteLine();
 
             Console.WriteLine("I numeri che sono nell'intervallo dato sono: " + intervallo(m2, x, y));
-            
+            Console.WriteLine();
+
+            Media(m2);
+            Console.WriteLine();
+
+            SommaC(m2);
         }
     }
 }
